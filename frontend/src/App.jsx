@@ -77,6 +77,7 @@ function App() {
   // Geolocation state
   const [coords, setCoords] = useState(null);
   const [nearestOffice, setNearestOffice] = useState(null);
+  const [locationDenied, setLocationDenied] = useState(false);
 
   const chatEndRef = useRef(null);
   const recognitionRef = useRef(null);
@@ -127,10 +128,12 @@ function App() {
             lat: position.coords.latitude,
             lon: position.coords.longitude
           });
+          setLocationDenied(false);
           fetchNearestOffice(position.coords.latitude, position.coords.longitude);
         },
         (err) => {
           console.warn('Geolocation access denied. Falling back to default office.');
+          setLocationDenied(true);
           fetchNearestOffice();
         }
       );
@@ -151,7 +154,7 @@ function App() {
     }
   }, []);
 
-  const fetchNearestOffice = async (lat = null, lon = null) => {
+  const fetchNearestOffice = async (lat = null, lon = null, district = null) => {
     try {
       const res = await fetch(`${API_BASE_URL}/route-office`, {
         method: 'POST',
@@ -159,7 +162,7 @@ function App() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ lat, lon })
+        body: JSON.stringify({ lat, lon, district })
       });
       const data = await res.json();
       if (!data.error) {
@@ -464,12 +467,17 @@ function App() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ query: activeQuery }),
+        body: JSON.stringify({ query: activeQuery, locationDenied }),
         signal: abortControllerRef.current.signal
       });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Server error occurred');
+
+      // Update location dynamically if LLM extracted a district from query
+      if (data.detectedDistrict) {
+        fetchNearestOffice(null, null, data.detectedDistrict);
+      }
 
       const newBotMsg = { sender: 'bot', text: '', data };
       let botMsgIdx = -1;
@@ -569,6 +577,19 @@ function App() {
       {/* Main Content Area */}
       {!token ? (
         <div className="auth-container">
+          <div className="auth-theme-toggle">
+            <span style={{ fontSize: '1.2rem', userSelect: 'none' }}>
+              {theme === 'dark' ? '🌙' : '☀️'}
+            </span>
+            <button
+              className={`appearance-toggle ${theme === 'light' ? 'light-on' : ''}`}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              aria-label="Toggle appearance"
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            >
+              <span className="appearance-toggle-thumb" />
+            </button>
+          </div>
           {error && <div className="error-banner">{error}</div>}
           <div className="auth-card">
             <h2>{isRegisterMode ? locales[selectedLanguage].authTitleRegister : locales[selectedLanguage].authTitleLogin}</h2>

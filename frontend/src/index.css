@@ -325,6 +325,16 @@ header {
   padding: 2rem;
   flex: 1;
   background: radial-gradient(circle at top, var(--bg-card) 0%, var(--bg-dark) 100%);
+  position: relative;
+}
+
+.auth-theme-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .auth-card {

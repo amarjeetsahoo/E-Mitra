@@ -146,7 +146,8 @@ const chatSchema = z.object({
     .min(2, 'Query must be at least 2 characters')
     .max(500, 'Query must not exceed 500 characters')
     .transform(s => s.trim())
-    .refine(s => !/[\x00-\x08\x0e-\x1f]/.test(s), 'Query contains invalid control characters')
+    .refine(s => !/[\x00-\x08\x0e-\x1f]/.test(s), 'Query contains invalid control characters'),
+  locationDenied: z.boolean().optional()
 });
 
 app.post('/api/chat', authenticateToken, async (req, res) => {
@@ -154,7 +155,7 @@ app.post('/api/chat', authenticateToken, async (req, res) => {
   const email = req.user.email;
 
   try {
-    const { query } = chatSchema.parse(req.body);
+    const { query, locationDenied } = chatSchema.parse(req.body);
 
     // Sanitize: escape quotes to prevent prompt-template breakout
     const safeQuery = query.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
@@ -255,17 +256,32 @@ Your job is to answer the User Query using the provided Legal/Scheme Context.
 
 User Query (translated context: "${langData.englishQuery}"): "${safeQuery}"
 
+Location Status: ${locationDenied ? 'Geolocation access was denied/disabled by user.' : 'Geolocation access is enabled.'}
+${locationDenied ? `
+IMPORTANT: You MUST humanize your response and ask the user for their district/area in Delhi so E-Mitra can route them to the correct local office. Friendly prompt example: "I notice that location services are disabled. Can you tell me your district or area in Delhi (e.g. Dwarka, Rohini, Shahdara) so I can help you find your local office?" (Translate this friendly onboarding to Hindi for the Hindi response).
+` : ''}
+
 Context:
 ${contextText}
+
+List of valid Delhi districts for routing:
+1. "Central Delhi" (for Central Delhi)
+2. "West" (for West Delhi, Karampura)
+3. "North-West" (for Nimri Colony, Ashok Vihar)
+4. "East & North-East" (for Shahdara, Jhilmil)
+5. "South-West" (for Hari Nagar DTC Depot)
+6. "South" (for Pushpa Bhawan)
 
 Guidelines:
 1. Explain their rights in simple, clear, conversational terms.
 2. In the Hindi answer, use common words (Hindustani) that a worker can understand easily. Do not use highly complex Sanskritized Hindi.
 3. You MUST cite the specific Act/Statute/Section (e.g., Minimum Wages Act 1948 Section 12 or Payment of Wages Act 1936 Section 5) in both English and Hindi.
-4. Your response MUST be in valid JSON matching this schema:
+4. If the user mentions a specific Delhi area, landmark, or district (e.g., "I live in Dwarka", "Dwarka", "Rohini", "Shahdara", "Vivek Vihar"), detect the matching district from the list above and set "detectedDistrict" to the exact district name (e.g., "South-West" or "North-West"). If no Delhi location is mentioned, set "detectedDistrict" to "".
+5. Your response MUST be in valid JSON matching this schema:
 {
   "hindi": "Your plain Hindi answer with statute citation here.",
-  "english": "Your plain English answer with statute citation here."
+  "english": "Your plain English answer with statute citation here.",
+  "detectedDistrict": "Standard district name if detected, otherwise empty string"
 }
 Return ONLY the raw JSON block. No markdown, no \`\`\`json wrappers.`;
 
@@ -273,9 +289,10 @@ Return ONLY the raw JSON block. No markdown, no \`\`\`json wrappers.`;
       type: "OBJECT",
       properties: {
         hindi: { type: "STRING" },
-        english: { type: "STRING" }
+        english: { type: "STRING" },
+        detectedDistrict: { type: "STRING" }
       },
-      required: ["hindi", "english"]
+      required: ["hindi", "english", "detectedDistrict"]
     };
 
     const finalAnswerText = await generateText(ragPrompt, ragAnswerSchema);
@@ -311,10 +328,10 @@ Return ONLY the raw JSON block. No markdown, no \`\`\`json wrappers.`;
 // Nearest District Labour Office Routing Route
 // ----------------------------------------------------
 const routeOfficeSchema = z.object({
-  lat: z.number().min(-90).max(90).optional(),
-  lon: z.number().min(-180).max(180).optional(),
-  district: z.string().max(100).optional()
-}).refine(d => d.lat !== undefined || d.district !== undefined, 'Either lat/lon or district is required');
+  lat: z.number().min(-90).max(90).nullable().optional(),
+  lon: z.number().min(-180).max(180).nullable().optional(),
+  district: z.string().regex(/^[a-zA-Z\s\-&\(\)]*$/).max(100).nullable().optional()
+});
 
 app.post('/api/route-office', authenticateToken, async (req, res) => {
   try {
