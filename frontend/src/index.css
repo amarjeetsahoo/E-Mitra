@@ -424,19 +424,11 @@ header {
   background: rgba(234, 179, 8, 0.1);
 }
 
-/* Sticky Input Bar at Bottom */
 .input-dock {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--dock-bg);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border-dark);
-  padding: 1rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  width: 100%;
 }
 
 .text-input-field {
@@ -678,13 +670,13 @@ header {
   border-radius: 4px;
 }
 
-/* Custom styling for HTML5 Audio player in dark themes */
+/* Custom styling for HTML5 Audio player */
 audio::-webkit-media-controls-panel {
-  background-color: var(--surface-card);
+  background-color: var(--bg-card);
 }
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-  color: var(--text);
+  color: var(--text-light);
 }
 
 @keyframes pulse-dot {
