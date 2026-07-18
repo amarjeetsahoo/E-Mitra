@@ -2,6 +2,12 @@
 
 E-Mitra is a bilingual, voice-first, highly secure web application built to empower migrant workers and labourers in Delhi. By translating complex legalese into plain, conversational Hindi and English, and employing hybrid semantic vector search via **Elasticsearch** and **Google Gemini 2.5 Flash**, E-Mitra allows workers to speak or type rights questions, find minimum wages, access welfare schemes (like e-Shram), and route themselves to their nearest District Labour Commissioner office.
 
+## 📸 Screenshots
+
+| Light Mode (Voice Preview & Office Card) | Dark Mode (Voice Preview & Office Card) |
+| :---: | :---: |
+| <img src="assets/audio_preview_light.png" width="400" alt="Light Mode Audio Preview" /> | <img src="assets/audio_preview_dark.png" width="400" alt="Dark Mode Audio Preview" /> |
+
 ---
 
 ## 🏆 Evaluation Parameters & Impact
