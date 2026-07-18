@@ -156,13 +156,17 @@ function App() {
 
   const fetchNearestOffice = async (lat = null, lon = null, district = null) => {
     try {
+      const body = {};
+      if (lat !== null && lat !== undefined) body.lat = lat;
+      if (lon !== null && lon !== undefined) body.lon = lon;
+      if (district) body.district = district;
       const res = await fetch(`${API_BASE_URL}/route-office`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
-        body: JSON.stringify({ lat, lon, district })
+        body: JSON.stringify(body)
       });
       const data = await res.json();
       if (!data.error) {
