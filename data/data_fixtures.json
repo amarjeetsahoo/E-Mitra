@@ -1,0 +1,135 @@
+{
+  "minimum_wages": [
+    {
+      "category": "Unskilled (अकुशल)",
+      "monthly_wage_inr": 18066,
+      "daily_wage_inr": 695,
+      "effective_date": "2025-10-01",
+      "applicable_sectors": "All scheduled employments (Construction, shops, hotels, offices, manufacturing)",
+      "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
+    },
+    {
+      "category": "Semi-Skilled (अर्धकुशल)",
+      "monthly_wage_inr": 19901,
+      "daily_wage_inr": 765,
+      "effective_date": "2025-10-01",
+      "applicable_sectors": "All scheduled employments (Construction, clerical assistants, basic machine operators)",
+      "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
+    },
+    {
+      "category": "Skilled (कुशल)",
+      "monthly_wage_inr": 21917,
+      "daily_wage_inr": 843,
+      "effective_date": "2025-10-01",
+      "applicable_sectors": "All scheduled employments (Construction, senior clerks, skilled technicians, master masons)",
+      "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
+    }
+  ],
+  "statutes": [
+    {
+      "act": "Minimum Wages Act, 1948 (न्यूनतम मजदूरी अधिनियम, 1948)",
+      "section": "Section 12 (धारा 12)",
+      "title": "Payment of minimum rates of wages (न्यूनतम मजदूरी का भुगतान)",
+      "description_hindi": "नियोक्ता को सरकार द्वारा तय की गई न्यूनतम मजदूरी की दरों से कम वेतन नहीं देना चाहिए। यदि आपका नियोक्ता आपको न्यूनतम दर (अकुशल के लिए ₹695 प्रतिदिन) से कम भुगतान करता है, तो यह एक कानूनन अपराध है। आप श्रम विभाग में इसके खिलाफ शिकायत दर्ज करा सकते हैं।",
+      "description_english": "The employer must pay to every employee engaged in a scheduled employment wages at a rate not less than the minimum rate of wages fixed by the government. Paying less than the notified minimum wage is a criminal offense under the law.",
+      "penalty_hindi": "धारा 22 के तहत 6 महीने तक की जेल या ₹500 तक का जुर्माना, या दोनों।",
+      "penalty_english": "Under Section 22, imprisonment up to 6 months or fine up to ₹500, or both.",
+      "remedy_hindi": "श्रमिक अधिनियम की धारा 20 के तहत श्रम आयुक्त (Labour Commissioner) के समक्ष दावा (Claim) दायर कर सकते हैं, जिसमें 10 गुना तक के अंतर राशि का मुआवजा मिल सकता है।",
+      "remedy_english": "Workers can file a claim before the Labour Commissioner under Section 20 of the Act, which may award compensation up to 10 times the unpaid wage amount."
+    },
+    {
+      "act": "Payment of Wages Act, 1936 (मजदूरी भुगतान अधिनियम, 1936)",
+      "section": "Section 5 (धारा 5)",
+      "title": "Time of payment of wages (मजदूरी भुगतान का समय)",
+      "description_hindi": "मजदूरी का भुगतान हर महीने समाप्त होने के बाद अगले 7 दिनों के भीतर (यदि संस्थान में 1000 से कम कर्मचारी हैं) या 10 दिनों के भीतर किया जाना चाहिए। ठेकेदार द्वारा मजदूरी रोकने या विलंब करने पर शिकायत की जा सकती है।",
+      "description_english": "Wages of every person employed must be paid before the expiry of the seventh day (in establishments with less than 1000 workers) or tenth day after the last day of the wage period.",
+      "penalty_hindi": "धारा 20 के तहत जुर्माना और ठेकेदार पर कानूनी कार्रवाई हो सकती है।",
+      "penalty_english": "Fines and statutory action against the employer/contractor under Section 20.",
+      "remedy_hindi": "यदि वेतन में देरी होती है, तो श्रमिक श्रम न्यायालय (Labour Court) या अधिकृत श्रम आयुक्त के पास शिकायत दर्ज करा सकते हैं।",
+      "remedy_english": "If salary is delayed, workers can file a complaint with the Labour Court or authorized Labour Inspectorate."
+    },
+    {
+      "act": "Contract Labour (Regulation and Abolition) Act, 1970 (ठेका श्रम अधिनियम, 1970)",
+      "section": "Section 21(4) (धारा 21(4))",
+      "title": "Responsibility for payment of wages (मजदूरी भुगतान के लिए मुख्य नियोक्ता की जिम्मेदारी)",
+      "description_hindi": "यदि ठेकेदार समय पर वेतन नहीं देता है या कम वेतन देता है, तो मुख्य नियोक्ता (Principal Employer - वह मालिक जिसके लिए ठेकेदार काम कर रहा है) की यह कानूनी जिम्मेदारी है कि वह श्रमिकों को मजदूरी का भुगतान करे। मुख्य नियोक्ता बाद में यह राशि ठेकेदार से वसूल कर सकता है।",
+      "description_english": "If the contractor fails to make payment of wages within the prescribed period or makes short payment, the Principal Employer shall be liable to make payment of wages in full to the contract labour and recover the amount so paid from the contractor.",
+      "penalty_hindi": "मुख्य नियोक्ता पर धारा 23/24 के तहत मुकदमा चलाया जा सकता है।",
+      "penalty_english": "The Principal Employer can be prosecuted under Sections 23/24 for non-compliance.",
+      "remedy_hindi": "यदि आपका ठेकेदार भाग गया है या भुगतान नहीं कर रहा है, तो आप मुख्य नियोक्ता (बिल्डर, कंपनी या सरकारी विभाग) को पत्र लिखकर अपने वेतन की मांग कर सकते हैं और श्रम विभाग को सूचित कर सकते हैं।",
+      "remedy_english": "If the contractor absconds or refuses to pay, workers can write to the Principal Employer demanding wages directly and notify the Labour Department."
+    }
+  ],
+  "welfare_schemes": [
+    {
+      "name": "e-Shram Card (ई-श्रम कार्ड)",
+      "eligibility_hindi": "असंगठित क्षेत्र के श्रमिक (जैसे निर्माण श्रमिक, रेहड़ी-पटरी वाले, घरेलू कामगार, कृषि श्रमिक) जिनकी उम्र 16 से 59 वर्ष के बीच है और जो आयकरदाता (Income Taxpayer) नहीं हैं और EPFO या ESIC के सदस्य नहीं हैं।",
+      "eligibility_english": "Unorganized workers (construction workers, street vendors, domestic helpers, agricultural workers) aged 16-59, who are not income taxpayers and not registered under EPFO or ESIC.",
+      "benefits_hindi": "1. दुर्घटना बीमा: ₹2 लाख की मुफ्त आकस्मिक मृत्यु और स्थायी विकलांगता बीमा, और ₹1 लाख की आंशिक विकलांगता सहायता।\n2. सामाजिक सुरक्षा योजनाएं: विभिन्न सरकारी पेंशन और कल्याणकारी योजनाओं का सीधा लाभ।\n3. देशव्यापी पहचान: पूरे भारत में आपकी पहचान को मान्यता मिलती है, जिससे प्रवासी श्रमिकों को आपदाओं के समय सहायता प्राप्त करना आसान होता है।",
+      "benefits_english": "1. Accidental Insurance: Free accident death & permanent disability cover of ₹2 Lakhs, and ₹1 Lakh for partial disability.\n2. Social Security Benefits: Direct integration with central/state pension and insurance schemes.\n3. National Portability: One single identifier valid across India, helping migrants receive state aid during emergencies.",
+      "how_to_apply_hindi": "अपने नजदीकी CSC (सामान्य सेवा केंद्र) पर जाएं या आधिकारिक सरकारी वेबसाइट eshram.gov.in पर जाकर अपने आधार कार्ड, बैंक खाते और मोबाइल नंबर (जो आधार से लिंक हो) के साथ मुफ्त पंजीकरण करें।",
+      "how_to_apply_english": "Register for free online at eshram.gov.in using Aadhaar, bank details, and an Aadhaar-linked mobile number, or visit any Common Service Centre (CSC)."
+    },
+    {
+      "name": "Delhi Building & Other Construction Workers Board (दिल्ली निर्माण कल्याण बोर्ड - DBOCWWB)",
+      "eligibility_hindi": "निर्माण श्रमिक (जैसे राजमिस्त्री, बढ़ई, बेलदार, पेंटर, बिजली मिस्त्री) जिन्होंने पिछले 12 महीनों में दिल्ली में कम से कम 90 दिनों तक निर्माण कार्य किया हो। पंजीकरण के लिए आधार कार्ड, बैंक खाता, दिल्ली का निवास प्रमाण और काम का स्व-घोषणा पत्र आवश्यक है।",
+      "eligibility_english": "Construction workers (masons, carpenters, helpers, painters, electricians) who have completed at least 90 days of construction work in Delhi during the preceding 12 months.",
+      "benefits_hindi": "1. पेंशन सहायता: 60 वर्ष की आयु के बाद ₹3,000 प्रति माह पेंशन।\n2. मातृत्व लाभ: महिला श्रमिकों को प्रसव के समय ₹30,000 की वित्तीय सहायता।\n3. बच्चों की शिक्षा: कक्षा 1 से कॉलेज तक के बच्चों के लिए ₹6,000 से ₹1,20,000 प्रति वर्ष की छात्रवृत्ति।\n4. स्वास्थ्य सहायता: गंभीर बीमारियों के इलाज के लिए ₹1 लाख तक की सहायता और मृत्यु होने पर ₹2 लाख का परिवार मुआवजा।",
+      "benefits_english": "1. Pension: ₹3,000 per month pension after reaching 60 years of age.\n2. Maternity Benefit: ₹30,000 financial support for female construction workers upon childbirth.\n3. Education Support: Scholarship of ₹6,000 to ₹1,20,000 per annum for children from 1st standard to college.\n4. Healthcare & Death Claim: Medical assistance up to ₹1 Lakh for major illnesses, and ₹2 Lakhs family compensation on death.",
+      "how_to_apply_hindi": "दिल्ली सरकार के ई-डिस्ट्रिक्ट पोर्टल (edistrict.delhigovt.nic.in) पर जाकर 'निर्माण श्रमिक पंजीकरण' सेवा के तहत आवेदन करें, या श्रम कार्यालय के पास सहायता डेस्क से संपर्क करें।",
+      "how_to_apply_english": "Apply online on the Delhi e-District portal (edistrict.delhigovt.nic.in) under the Construction Worker Registration section."
+    }
+  ],
+  "district_offices": [
+    {
+      "district": "South District (दक्षिणी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (South)",
+      "address_hindi": "पुष्पा भवन, मदनगीर रोड, साकेत के पास, नई दिल्ली - 110062",
+      "address_english": "Pushpa Bhawan, Madangir Road, near Saket, New Delhi - 110062",
+      "helpline": "011-29051838",
+      "latitude": 28.5222,
+      "longitude": 77.2305,
+      "maps_query": "Office of the Joint Labour Commissioner, Pushpa Bhawan, New Delhi"
+    },
+    {
+      "district": "West District (पश्चिमी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (West)",
+      "address_hindi": "श्रम कार्यालय, एफ-ब्लॉक, करमपुरा, नई दिल्ली - 110015",
+      "address_english": "F-Block, Karampura, New Delhi - 110015",
+      "helpline": "011-25191314",
+      "latitude": 28.6558,
+      "longitude": 77.1354,
+      "maps_query": "Labour Office Karampura, New Delhi"
+    },
+    {
+      "district": "North-West District (उत्तर-पश्चिमी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (North-West)",
+      "address_hindi": "निमरी कॉलोनी, अशोक विहार फेज-4, दिल्ली - 110052",
+      "address_english": "Nimri Colony, Ashok Vihar Phase-IV, Delhi - 110052",
+      "helpline": "011-27303031",
+      "latitude": 28.6946,
+      "longitude": 77.1722,
+      "maps_query": "Labour Office Ashok Vihar Nimri Colony, New Delhi"
+    },
+    {
+      "district": "East & North-East District (पूर्वी और उत्तर-पूर्वी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (East/North-East)",
+      "address_hindi": "विश्वकर्मा नगर, झिलमिल कॉलोनी, विवेक विहार के पास, शाहदरा, दिल्ली - 110095",
+      "address_english": "Vishwakarma Nagar, Jhilmil Colony, near Vivek Vihar, Shahdara, Delhi - 110095",
+      "helpline": "011-22156641",
+      "latitude": 28.6657,
+      "longitude": 77.3056,
+      "maps_query": "Labour Office Jhilmil JLC Shahdara, Delhi"
+    },
+    {
+      "district": "South-West District (दक्षिण-पश्चिमी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (South-West)",
+      "address_hindi": "डीटीसी डिपो परिसर, हरी नगर, नई दिल्ली - 110064",
+      "address_english": "DTC Depot Complex, Hari Nagar, New Delhi - 110064",
+      "helpline": "011-25121404",
+      "latitude": 28.6139,
+      "longitude": 77.0877,
+      "maps_query": "Labour Office Hari Nagar DTC Depot, New Delhi"
+    }
+  ]
+}
