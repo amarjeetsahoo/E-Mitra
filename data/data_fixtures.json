@@ -1,27 +1,51 @@
 {
   "minimum_wages": [
     {
-      "category": "Unskilled (अकुशल)",
+      "category": "Unskilled (अकुशल - मजदूर/बेलदार/स्वीपर)",
       "monthly_wage_inr": 18066,
       "daily_wage_inr": 695,
       "effective_date": "2025-10-01",
-      "applicable_sectors": "All scheduled employments (Construction, shops, hotels, offices, manufacturing)",
+      "applicable_sectors": "All scheduled employments in Delhi (Construction, shops, hotels, offices, manufacturing, security guards, helpers, loaders)",
       "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
     },
     {
-      "category": "Semi-Skilled (अर्धकुशल)",
+      "category": "Semi-Skilled (अर्धकुशल - गार्ड/सहायक मिस्त्री/चालक)",
       "monthly_wage_inr": 19901,
       "daily_wage_inr": 765,
       "effective_date": "2025-10-01",
-      "applicable_sectors": "All scheduled employments (Construction, clerical assistants, basic machine operators)",
+      "applicable_sectors": "All scheduled employments in Delhi (Construction, clerical assistants, basic machine operators, light vehicle drivers, waiters)",
       "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
     },
     {
-      "category": "Skilled (कुशल)",
+      "category": "Skilled (कुशल - राजमिस्त्री/बढ़ई/पेंटर/बिजली मिस्त्री)",
       "monthly_wage_inr": 21917,
       "daily_wage_inr": 843,
       "effective_date": "2025-10-01",
-      "applicable_sectors": "All scheduled employments (Construction, senior clerks, skilled technicians, master masons)",
+      "applicable_sectors": "All scheduled employments in Delhi (Construction, senior clerks, skilled technicians, master masons, electricians, heavy drivers)",
+      "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
+    },
+    {
+      "category": "Clerical Non-Matriculate (लिपिकीय - गैर मैट्रिक)",
+      "monthly_wage_inr": 19901,
+      "daily_wage_inr": 765,
+      "effective_date": "2025-10-01",
+      "applicable_sectors": "Shops, commercial establishments, factories, offices (Non-matriculate staff)",
+      "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
+    },
+    {
+      "category": "Clerical Matriculate / Non-Graduate (लिपिकीय - मैट्रिक)",
+      "monthly_wage_inr": 21917,
+      "daily_wage_inr": 843,
+      "effective_date": "2025-10-01",
+      "applicable_sectors": "Shops, commercial establishments, offices (Matriculate staff, typists, record keepers)",
+      "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
+    },
+    {
+      "category": "Clerical Graduate & Above (लिपिकीय - स्नातक)",
+      "monthly_wage_inr": 23837,
+      "daily_wage_inr": 917,
+      "effective_date": "2025-10-01",
+      "applicable_sectors": "Shops, commercial establishments, offices (Graduate accountants, computer operators, managers)",
       "legal_basis": "Delhi Minimum Wages Notification (Section 5, Minimum Wages Act, 1948)"
     }
   ],
@@ -58,6 +82,105 @@
       "penalty_english": "The Principal Employer can be prosecuted under Sections 23/24 for non-compliance.",
       "remedy_hindi": "यदि आपका ठेकेदार भाग गया है या भुगतान नहीं कर रहा है, तो आप मुख्य नियोक्ता (बिल्डर, कंपनी या सरकारी विभाग) को पत्र लिखकर अपने वेतन की मांग कर सकते हैं और श्रम विभाग को सूचित कर सकते हैं।",
       "remedy_english": "If the contractor absconds or refuses to pay, workers can write to the Principal Employer demanding wages directly and notify the Labour Department."
+    },
+    {
+      "act": "Maternity Benefit Act, 1961 (मातृत्व लाभ अधिनियम, 1961)",
+      "section": "Section 5 (धारा 5)",
+      "title": "Right to payment of maternity benefit (मातृत्व लाभ भुगतान का अधिकार)",
+      "description_hindi": "प्रत्येक महिला श्रमिक जिसने संस्थान में कम से कम 80 दिनों तक काम किया है, वह 26 सप्ताह (6.5 महीने) के सवेतन मातृत्व अवकाश (Paid Maternity Leave) की हकदार है। गर्भावस्था या प्रसव के आधार पर महिला को नौकरी से निकालना कानूनी अपराध है।",
+      "description_english": "Every female worker who has worked for at least 80 days in an establishment is entitled to paid maternity leave for up to 26 weeks for the first two children. Termination of employment during maternity leave is illegal.",
+      "penalty_hindi": "नियोक्ता पर 1 वर्ष तक का कारावास और ₹5,000 तक का जुर्माना।",
+      "penalty_english": "Imprisonment up to 1 year and fine up to ₹5,000 for the defaulting employer.",
+      "remedy_hindi": "महिला श्रमिक श्रम अधिकारी या निरीक्षक के पास शिकायत दर्ज करा सकती हैं और बकाया वेतन के साथ बहाली की मांग कर सकती हैं।",
+      "remedy_english": "Female workers can file a complaint with the Inspector of Labour and claim full unpaid maternity benefits along with reinstatement."
+    },
+    {
+      "act": "Equal Remuneration Act, 1976 (समान पारिश्रमिक अधिनियम, 1976)",
+      "section": "Section 4 (धारा 4)",
+      "title": "Duty of employer to pay equal remuneration (समान कार्य के लिए समान वेतन का कर्तव्य)",
+      "description_hindi": "नियोक्ता पुरुष और महिला श्रमिकों को समान कार्य या समान प्रकृति के कार्य के लिए भिन्न वेतन नहीं दे सकता। लिंग (Gender) के आधार पर वेतन में भेदभाव करना कानूनन मना है।",
+      "description_english": "No employer shall pay to any worker remuneration at rates less favorable than those at which remuneration is paid by him to the workers of the opposite sex for performing the same work or work of a similar nature.",
+      "penalty_hindi": "नियोक्ता पर ₹10,000 से ₹20,000 तक का जुर्माना।",
+      "penalty_english": "Fine ranging from ₹10,000 to ₹20,000 on the employer for sex discrimination in wages.",
+      "remedy_hindi": "महिला श्रमिक श्रम आयुक्त के पास शिकायत दर्ज कराकर पुरुष समकक्षों के बराबर वेतन अंतर का दावा कर सकती हैं।",
+      "remedy_english": "Affected female workers can apply to the designated Labour Authority for recovery of wage differentials."
+    },
+    {
+      "act": "Inter-State Migrant Workmen Act, 1979 (अंतर-राज्यीय प्रवासी कर्मकार अधिनियम, 1979)",
+      "section": "Section 14 & 15 (धारा 14 एवं 15)",
+      "title": "Displacement & Journey Allowance (विस्थापन एवं यात्रा भत्ता)",
+      "description_hindi": "दूसरे राज्य से दिल्ली में काम करने आए प्रवासी श्रमिकों को ठेकेदार द्वारा उनके गृह राज्य से दिल्ली आने-जाने का यात्रा भत्ता (Passage Allowance) तथा एक माह का विस्थापन भत्ता (Displacement Allowance) दिया जाना अनिवार्य है।",
+      "description_english": "Inter-state migrant workers brought to Delhi by a contractor are legally entitled to a non-refundable displacement allowance equal to 50% of monthly wages and full travel allowance for journey between home state and place of work.",
+      "penalty_hindi": "1 वर्ष तक की जेल या ₹1,000 तक जुर्माना।",
+      "penalty_english": "Imprisonment up to 1 year or fine up to ₹1,000, or both.",
+      "remedy_hindi": "प्रवासी श्रमिक दिल्ली श्रम आयुक्त या अपने गृह राज्य के श्रम विभाग को भत्ता न मिलने की शिकायत कर सकते हैं।",
+      "remedy_english": "Migrant workers can lodge a grievance with the Delhi Labour Inspectorate or their home state Labour Commissioner."
+    },
+    {
+      "act": "Factories Act, 1948 (कारखाना अधिनियम, 1948 / ओएसएच कोड)",
+      "section": "Section 51 & 59 (धारा 51 एवं 59)",
+      "title": "Weekly hours and extra wages for overtime (सप्ताहिक घंटे एवं ओवरटाइम का दोगुना भुगतान)",
+      "description_hindi": "किसी भी श्रमिक से एक दिन में 9 घंटे और सप्ताह में 48 घंटे से अधिक काम नहीं कराया जा सकता। यदि कोई श्रमिक तय घंटों से अधिक काम करता है, तो उसे सामान्य मजदूरी दर की दोगुनी दर (2x Overtime Rate) से ओवरटाइम का भुगतान किया जाना चाहिए।",
+      "description_english": "No adult worker shall be required to work in a factory for more than 48 hours in any week or 9 hours in a day. Overtime work beyond standard hours must be paid at double the ordinary rate of wages (2x wages).",
+      "penalty_hindi": "कारखाना प्रबंधक पर 2 वर्ष तक का कारावास या ₹1 लाख तक का जुर्माना।",
+      "penalty_english": "Imprisonment up to 2 years or fine up to ₹1 Lakh, or both.",
+      "remedy_hindi": "ओवरटाइम न मिलने पर कारखाने के मुख्य निरीक्षक (Chief Inspector of Factories) या श्रम अदालत में शिकायत करें।",
+      "remedy_english": "Workers can file a grievance with the Inspector of Factories to recover 2x overtime arrears."
+    },
+    {
+      "act": "Employees' State Insurance Act, 1948 (कर्मचारी राज्य बीमा अधिनियम, 1948 - ESIC)",
+      "section": "Section 46 (धारा 46)",
+      "title": "Benefits provided under ESIC (ईएसआई के तहत मिलने वाली स्वास्थ्य एवं चिकित्सा सुविधाएं)",
+      "description_hindi": "₹21,000 या उससे कम प्रतिमाह कमाने वाले श्रमिकों को ईएसआई योजना के तहत पूरे परिवार के लिए मुफ्त अस्पताल इलाज, बीमारी भत्ता, और दुर्घटना विकलांगता पेंशन मिलती है।",
+      "description_english": "Employees earning ₹21,000 or less per month are entitled to full medical care for self and family, sickness benefit (70% wages during certified illness), and permanent disability pension under ESIC.",
+      "penalty_hindi": "ईएसआई अंशदान न काटने या जमा न करने पर नियोक्ता को 3 वर्ष तक की सजा।",
+      "penalty_english": "Defaulting employers face up to 3 years imprisonment for failing to deposit ESIC contributions.",
+      "remedy_hindi": "श्रमिक नजदीकी ESIC डिपेन्सरि अथवा esic.gov.in पर UAN/IP नंबर द्वारा लाभ प्राप्त कर सकते हैं।",
+      "remedy_english": "Workers can visit any ESIC dispensary or branch office using their IP (Insurance Person) number."
+    },
+    {
+      "act": "Employees' Provident Funds Act, 1952 (कर्मचारी भविष्य निधि अधिनियम, 1952 - EPFO)",
+      "section": "Section 6 (धारा 6)",
+      "title": "EPF Contribution & Pension (भविष्य निधि और पेंशन अंशदान)",
+      "description_hindi": "10 या अधिक कर्मचारियों वाले संस्थानों में नियोक्ता को श्रमिक के वेतन का 12% ईपीएफ खाते में जमा करना होता है, जिसमें से 8.33% पेंशन (EPS) में जाता है।",
+      "description_english": "Establishments employing 20 or more workers must deduct 12% of basic wages for EPF, matched by employer contribution (8.33% directed to EPS pension scheme).",
+      "penalty_hindi": "पीएफ राशि जमा न करने पर नियोक्ता पर धारा 14 के तहत गैर-जमानती मामला दर्ज होता है।",
+      "penalty_english": "Non-payment of PF constitutes a non-bailable criminal offense under Section 14.",
+      "remedy_hindi": "श्रमिक epfindia.gov.in पोर्टल अथवा UMANG ऐप पर यूएएन (UAN) पासबुक जांच सकते हैं एवं शिकायत दर्ज कर सकते हैं।",
+      "remedy_english": "Workers can track savings via UAN member portal or UMANG app and lodge PF grievances online."
+    },
+    {
+      "act": "Payment of Gratuity Act, 1972 (ग्रेच्युटी भुगतान अधिनियम, 1972)",
+      "section": "Section 4 (धारा 4)",
+      "title": "Payment of Gratuity (5 वर्ष सेवा पश्चात ग्रेच्युटी का अधिकार)",
+      "description_hindi": "किसी भी संस्थान में लगातार 5 वर्ष कार्य करने वाले कर्मचारी को नौकरी छोड़ने, सेवानिवृत्त होने पर 15 दिन प्रति वर्ष की दर से ग्रेच्युटी भुगतान प्राप्त करने का अधिकार है।",
+      "description_english": "Employees completing at least 5 years of continuous service are entitled to gratuity calculated at 15 days' salary for every completed year of service.",
+      "penalty_hindi": "नियोक्ता द्वारा ग्रेच्युटी न देने पर 6 महीने से 2 साल की जेल।",
+      "penalty_english": "Imprisonment from 6 months up to 2 years for non-payment of statutory gratuity.",
+      "remedy_hindi": "नियंत्रक प्राधिकारी (Controlling Authority) के समक्ष फार्म N में आवेदन जमा करें।",
+      "remedy_english": "File an application in Form N before the Controlling Authority under the Gratuity Act."
+    },
+    {
+      "act": "Delhi Shops and Establishments Act, 1954 (दिल्ली दुकान एवं स्थापना अधिनियम, 1954)",
+      "section": "Section 15 & 22 (धारा 15 एवं 22)",
+      "title": "Leaves & Notice Period for Termination (अवकाश एवं नौकरी से निकालने की पूर्व सूचना)",
+      "description_hindi": "दुकानों व व्यावसायिक प्रतिष्ठानों में कार्य करने वाले श्रमिकों को वर्ष में 15 दिन सवेतन अवकाश (Earned Leave) एवं 12 दिन आकस्मिक अवकाश (Casual Leave) मिलता है। 1 माह से अधिक कार्य कर चुके श्रमिक को बिना 1 माह की नोटिस या 1 माह के वेतन के बिना नौकरी से नहीं निकाला जा सकता।",
+      "description_english": "Employees in Delhi shops/offices are entitled to 15 days privilege leave and 12 days casual leave annually. Services of an employee working over 1 month cannot be terminated without 1 month notice or 1 month salary in lieu of notice.",
+      "penalty_hindi": "नियोक्ता पर दुकान का चालान एवं जुर्माना।",
+      "penalty_english": "Fines and prosecution under Section 33 of the Act.",
+      "remedy_hindi": "दुकान निरीक्षक (Shop Inspector) के पास लिखित शिकायत प्रस्तुत करें।",
+      "remedy_english": "Lodge a complaint with the Chief Inspector of Shops & Establishments."
+    },
+    {
+      "act": "Street Vendors Act, 2014 (रेहड़ी-पटरी / स्ट्रीट वेंडर अधिनियम, 2014)",
+      "section": "Section 3 & 18 (धारा 3 एवं 18)",
+      "title": "Protection against illegal eviction (अवैध जब्ती और बेदखली से सुरक्षा)",
+      "description_hindi": "जब तक टाउन वेंडिंग कमेटी (TVC) द्वारा सर्वेक्षण पूरा नहीं होता और वेंडिंग प्रमाण पत्र नहीं मिलता, तब तक किसी भी रेहड़ी-पटरी वाले को उसके स्थान से बेदखल नहीं किया जा सकता और न ही उसका सामान जब्त किया जा सकता है।",
+      "description_english": "No street vendor shall be evicted or relocated by local municipal authorities (MCD) until the survey by Town Vending Committee (TVC) is completed and Certificate of Vending is issued.",
+      "penalty_hindi": "अधिकारी द्वारा उल्लंघन करने पर टाउन वेंडिंग कमेटी में शिकायत दर्ज होगी।",
+      "penalty_english": "Unlawful eviction can be challenged before the Vending Grievance Redressal Committee.",
+      "remedy_hindi": "नगर निगम टीवीसी (TVC) या जिला शिकायत निवारण समिति के समक्ष आवेदन दें।",
+      "remedy_english": "File an appeal before the Town Vending Committee or District Grievance Redressal Committee."
     }
   ],
   "welfare_schemes": [
@@ -78,6 +201,42 @@
       "benefits_english": "1. Pension: ₹3,000 per month pension after reaching 60 years of age.\n2. Maternity Benefit: ₹30,000 financial support for female construction workers upon childbirth.\n3. Education Support: Scholarship of ₹6,000 to ₹1,20,000 per annum for children from 1st standard to college.\n4. Healthcare & Death Claim: Medical assistance up to ₹1 Lakh for major illnesses, and ₹2 Lakhs family compensation on death.",
       "how_to_apply_hindi": "दिल्ली सरकार के ई-डिस्ट्रिक्ट पोर्टल (edistrict.delhigovt.nic.in) पर जाकर 'निर्माण श्रमिक पंजीकरण' सेवा के तहत आवेदन करें, या श्रम कार्यालय के पास सहायता डेस्क से संपर्क करें।",
       "how_to_apply_english": "Apply online on the Delhi e-District portal (edistrict.delhigovt.nic.in) under the Construction Worker Registration section."
+    },
+    {
+      "name": "PM Shram Yogi Maandhan (PMSYM - प्रधानमंत्री श्रम योगी मानधन योजना)",
+      "eligibility_hindi": "18 से 40 वर्ष की आयु के असंगठित श्रमिक जिनकी मासिक आय ₹15,000 या उससे कम है।",
+      "eligibility_english": "Unorganized sector workers aged 18 to 40 years with a monthly income of ₹15,000 or less.",
+      "benefits_hindi": "60 वर्ष की आयु पूर्ण होने पर ₹3,000 प्रतिमाह की सुनिश्चित न्यूनतम पेंशन। पेंशनभोगी की मृत्यु होने पर जीवनसाथी को 50% पारिवारिक पेंशन। केंद्र सरकार समान अंशदान (Matching Contribution) देती है।",
+      "benefits_english": "Assured minimum monthly pension of ₹3,000 upon reaching 60 years. 50% family pension for spouse upon death. Central Government matches the worker's monthly contribution 1:1.",
+      "how_to_apply_hindi": "निकटतम सीएससी केंद्र (CSC) पर जाएं और आधार कार्ड व बचत बैंक खाते की पासबुक के साथ पंजीकरण कराएं।",
+      "how_to_apply_english": "Visit the nearest CSC center or register online at maandhan.in using Aadhaar and bank account details."
+    },
+    {
+      "name": "Ayushman Bharat PM-JAY (आयुष्मान भारत स्वास्थ्य योजना)",
+      "eligibility_hindi": "SECC 2011 डेटाबेस के अनुसार गरीब व असंगठित क्षेत्र के श्रमिक परिवार एवं ई-श्रम कार्ड धारक।",
+      "eligibility_english": "Poor and vulnerable unorganized worker families identified under SECC data and e-Shram cardholders.",
+      "benefits_hindi": "प्रति परिवार प्रति वर्ष ₹5 लाख तक का मुफ्त कैशलेस स्वास्थ्य उपचार अस्पताल में भर्ती (Secondary & Tertiary Care) के लिए उपलब्ध है।",
+      "benefits_english": "Free cashless health coverage up to ₹5 Lakhs per family per year for secondary and tertiary hospitalization in empaneled public and private hospitals across India.",
+      "how_to_apply_hindi": "आयुष्मान ऐप या pmjay.gov.in पर पात्रता जांचें, अथवा नजदीकी सरकारी अस्पताल/CSC में आयुष्मान कार्ड बनवाएं।",
+      "how_to_apply_english": "Check eligibility on pmjay.gov.in or visit any empaneled government hospital or CSC to generate an Ayushman Card."
+    },
+    {
+      "name": "One Nation One Ration Card (ONORC - एक देश एक राशन कार्ड योजना)",
+      "eligibility_hindi": "भारत के किसी भी राज्य के एनएफएसए (NFSA / राशन कार्ड) लाभार्थी जो दिल्ली में काम कर रहे हैं।",
+      "eligibility_english": "NFSA ration card holders from any state in India living and working as migrant labourers in Delhi.",
+      "benefits_hindi": "प्रवासी श्रमिक अपने गृह राज्य का राशन कार्ड दिखाए बिना आधार बायोमेट्रिक (e-POS Machine) से दिल्ली की किसी भी राशन दुकान से अपना गेहूं व चावल प्राप्त कर सकते हैं।",
+      "benefits_english": "Migrant workers can collect their quota of subsidized food grains (wheat/rice) from any Fair Price Shop in Delhi using Aadhaar biometric authentication.",
+      "how_to_apply_hindi": "दिल्ली में अपने निकटतम राशन की दुकान (Fair Price Shop) पर आधार कार्ड के साथ जाएं।",
+      "how_to_apply_english": "Visit any e-POS enabled Fair Price Shop in Delhi with Aadhaar card."
+    },
+    {
+      "name": "PM SVANidhi Scheme (प्रधानमंत्री स्वनिधि योजना - रेहड़ी पटरी कर्ज)",
+      "eligibility_hindi": "दिल्ली के रेहड़ी-पटरी वाले, फेरीवाले तथा छोटे विक्रेता जो 24 मार्च 2020 से पहले से वेंडिंग कर रहे हैं।",
+      "eligibility_english": "Street vendors, hawkers, and roadside micro-merchants operating in Delhi urban areas.",
+      "benefits_hindi": "बिना किसी गारंटी (Collateral-Free) के पहली बार ₹10,000, समय पर चुकाने पर ₹20,000 तथा तीसरी बार ₹50,000 का कम ब्याज दर पर व्यापारिक ऋण। डिजिटल लेनदेन पर कैशबैक।",
+      "benefits_english": "Collateral-free micro-loans of ₹10,000 (1st tranche), ₹20,000 (2nd tranche), and ₹50,000 (3rd tranche) at 7% interest subsidy with digital transaction cashback rewards.",
+      "how_to_apply_hindi": "pmsvanidhi.mohua.gov.in पर ऑनलाइन आवेदन करें या नजदीकी बैंक शाखा/CSC में संपर्क करें।",
+      "how_to_apply_english": "Apply online at pmsvanidhi.mohua.gov.in or approach any public bank branch in Delhi."
     }
   ],
   "district_offices": [
@@ -130,6 +289,56 @@
       "latitude": 28.6139,
       "longitude": 77.0877,
       "maps_query": "Labour Office Hari Nagar DTC Depot, New Delhi"
+    },
+    {
+      "district": "Central District (केंद्रीय जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (Central)",
+      "address_hindi": "श्रम भवन, पूसा रोड, करोल बाग के पास, नई दिल्ली - 110005",
+      "address_english": "Labour Bhawan, Pusa Road, near Karol Bagh, New Delhi - 110005",
+      "helpline": "011-25712345",
+      "latitude": 28.6448,
+      "longitude": 77.1906,
+      "maps_query": "Labour Office Pusa Road Karol Bagh, New Delhi"
+    },
+    {
+      "district": "North District (उत्तरी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (North)",
+      "address_hindi": "5-शाम नाथ मार्ग, सिविल लाइंस, पुरानी दिल्ली - 110054",
+      "address_english": "5-Sham Nath Marg, Civil Lines, Old Delhi - 110054",
+      "helpline": "011-23951234",
+      "latitude": 28.6784,
+      "longitude": 77.2245,
+      "maps_query": "Labour Commissioner Office Sham Nath Marg Civil Lines, Delhi"
+    },
+    {
+      "district": "South-East District (दक्षिण-पूर्वी जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (South-East)",
+      "address_hindi": "ओखला इंडस्ट्रियल एरिया, फेज-3, कालकाजी के पास, नई दिल्ली - 110020",
+      "address_english": "Okhla Industrial Area, Phase-III, near Kalkaji, New Delhi - 110020",
+      "helpline": "011-26384012",
+      "latitude": 28.5355,
+      "longitude": 77.2631,
+      "maps_query": "Labour Office Okhla Industrial Area Phase 3, New Delhi"
+    },
+    {
+      "district": "New Delhi District (नई दिल्ली जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (New Delhi)",
+      "address_hindi": "कैनिंग लेन, कस्तूरबा गांधी मार्ग, मंडी हाउस के पास, नई दिल्ली - 110001",
+      "address_english": "Canning Lane, Kasturba Gandhi Marg, near Mandi House, New Delhi - 110001",
+      "helpline": "011-23381234",
+      "latitude": 28.6250,
+      "longitude": 77.2280,
+      "maps_query": "Labour Commissioner Canning Lane KG Marg, New Delhi"
+    },
+    {
+      "district": "Shahdara District (शाहदरा जिला)",
+      "office_name": "Office of the Joint Labour Commissioner (Shahdara)",
+      "address_hindi": "गीता कॉलोनी कॉम्प्लेक्स, शास्त्री नगर मेट्रो स्टेशन के पास, दिल्ली - 110031",
+      "address_english": "Geeta Colony Complex, near Shastri Nagar Metro Station, Delhi - 110031",
+      "helpline": "011-22441098",
+      "latitude": 28.6530,
+      "longitude": 77.2750,
+      "maps_query": "Labour Office Geeta Colony Complex Shahdara, Delhi"
     }
   ]
 }

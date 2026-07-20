@@ -81,9 +81,6 @@ def create_index_if_not_exists():
         print(f"Deleted existing index: {INDEX_NAME}")
 
     mappings = {
-        "settings": {
-            "number_of_replicas": 0  # single-node dev — avoids yellow cluster health
-        },
         "mappings": {
             "properties": {
                 "doc_type": {"type": "keyword"},
