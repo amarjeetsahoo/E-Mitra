@@ -396,17 +396,21 @@ app.post('/api/route-office', authenticateToken, async (req, res) => {
       }
     }
 
-    // Fallback if no office matched or Elasticsearch query failed
+    // Return office only if district matched or GPS coordinates provided
     if (offices.length === 0) {
       if (district) {
         const matched = defaultOffices.find(o => 
           o.district.toLowerCase().includes(district.toLowerCase())
         );
-        offices = matched ? [matched] : [defaultOffices[0]];
+        offices = matched ? [matched] : [];
       } else {
-        // default to first office
-        offices = [defaultOffices[0]];
+        // No valid GPS coordinates or district provided — do not ping/return a default office
+        return res.status(400).json({ error: "No location coordinates or district provided." });
       }
+    }
+
+    if (offices.length === 0) {
+      return res.status(404).json({ error: "No office found matching the specified district." });
     }
 
     res.json(offices[0]);

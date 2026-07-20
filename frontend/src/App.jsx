@@ -166,19 +166,24 @@ function App() {
           (err) => {
             console.warn('Geolocation denied or unavailable:', err.message);
             setLocationDenied(true);
-            fetchNearestOffice(null, null);
+            setNearestOffice(null); // Do not auto-ping an office card on location denial
           },
           { timeout: 10000 }
         );
       } else {
         setLocationDenied(true);
-        fetchNearestOffice(null, null);
+        setNearestOffice(null);
       }
     }
   }, [token]);
 
-  // Fetch Nearest District Labour Office
+  // Fetch Nearest District Labour Office (only when GPS lat/lon or explicit district is provided)
   const fetchNearestOffice = async (lat = null, lon = null, district = null) => {
+    if ((lat === null || lat === undefined) && (lon === null || lon === undefined) && !district) {
+      setNearestOffice(null);
+      return;
+    }
+
     try {
       const body = {};
       if (lat !== null && lat !== undefined) body.lat = lat;
@@ -194,8 +199,10 @@ function App() {
         body: JSON.stringify(body)
       });
       const data = await res.json();
-      if (!data.error) {
+      if (!data.error && (data.office_name || data.title)) {
         setNearestOffice(data);
+      } else {
+        setNearestOffice(null);
       }
     } catch (err) {
       console.error('Failed to fetch nearest office:', err);
