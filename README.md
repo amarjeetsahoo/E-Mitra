@@ -1,108 +1,188 @@
-# E-Mitra (ई-मित्र) — Delhi Migrant Worker & Labour Right Agent
+# E-Mitra (ई-मित्र) — Delhi Labour Rights & Migrant Worker AI Agent
 
-E-Mitra is a bilingual, voice-first, highly secure web application built to empower migrant workers and labourers in Delhi. By translating complex legalese into plain, conversational Hindi and English, and employing hybrid semantic vector search via **Elasticsearch** and **Google Gemini 2.5 Flash**, E-Mitra allows workers to speak or type rights questions, find minimum wages, access welfare schemes (like e-Shram), and route themselves to their nearest District Labour Commissioner office.
+<div align="center">
 
-## 📸 Screenshots
+![Elasticsearch Cloud](https://img.shields.io/badge/Elasticsearch-Cloud%203072--dim%20HNSW-005571?style=for-the-badge&logo=elasticsearch&logoColor=white)
+![Google Gemini 2.5](https://img.shields.io/badge/Google%20Gemini-2.5%20Flash-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![GSAP Core & Motion](https://img.shields.io/badge/GSAP-Core%20%26%20Plugins-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+![React 19 + Vite](https://img.shields.io/badge/React%2019-Vite%208.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Light Theme Only](https://img.shields.io/badge/UI%20Theme-Pure%20Light%20Mode-f97316?style=for-the-badge)
+![WCAG AA](https://img.shields.io/badge/Accessibility-WCAG%20AA%20Compliant-10b981?style=for-the-badge)
 
-| Light Mode (Voice Preview & Office Card) | Dark Mode (Voice Preview & Office Card) |
+</div>
+
+---
+
+## 🌟 Executive Overview
+
+**E-Mitra (ई-मित्र)** is an empathetic, voice-first, bilingual AI digital assistant engineered specifically for migrant workers, daily wage labourers, and industrial workers in Delhi. 
+
+By bridging the severe legal information asymmetry between workers and contractors, E-Mitra translates complex Indian statutory acts (Minimum Wages Act, Payment of Wages Act, Contract Labour Act, Maternity Benefit Act, ESIC, EPFO) into plain conversational **Hindi** and **English**, while providing direct physical geolocation routing to the nearest **Delhi District Labour Commissioner Office** via Google Maps.
+
+---
+
+## 📸 Interface & UI Highlights
+
+| Pristine Light Mode Dashboard | Interactive Routing Card |
 | :---: | :---: |
-| <img src="assets/audio_preview_light.png" width="400" alt="Light Mode Audio Preview" /> | <img src="assets/audio_preview_dark.png" width="400" alt="Dark Mode Audio Preview" /> |
+| ![Dashboard Light Mode](C:/Users/amarj/.gemini/antigravity-ide/brain/b62197b7-9141-4273-acc4-bcfadc9b6de4/dashboard_light_mode_1784550849890.png) | ![Nearest Office Card](C:/Users/amarj/.gemini/antigravity-ide/brain/b62197b7-9141-4273-acc4-bcfadc9b6de4/nearest_office_card_1784551234714.png) |
 
 ---
 
-## 🏆 Evaluation Parameters & Impact
+## 🏗️ System Architecture & Hybrid RAG Flow
 
-E-Mitra is designed to excel across all core parameters:
+### 1. End-to-End Execution Pipeline
 
-### 1. Real World Impact and Relevance
-Migrant workers face massive barriers: language, digital literacy, and information asymmetry. E-Mitra solves this by providing a **Voice-First** interface. A worker can speak their problem in conversational Hindi (e.g., *"Contractor hasn't paid me"*). E-Mitra responds in empathetic, plain Hindi for understanding, while simultaneously providing the exact legal English statute (e.g., *Payment of Wages Act 1936*) so the worker has actionable proof to show authorities.
+```mermaid
+flowchart TD
+    subgraph Client ["📱 Client Application Layer (React 19 + GSAP + Pure Light UI)"]
+        User[👷 Migrant Worker / Labourer]
+        VoiceInput["🎤 Web Speech API / MediaRecorder"]
+        TextInput["⌨️ Dual-Language Input Field"]
+        QuickChips["⚡ Quick Action Prompts Bar"]
+        AudioPreview["🔊 Audio Preview Player & Control Dock"]
+        StopBtn["⏹️ AbortController Request Cancel"]
+    end
 
-### 2. Actionability and Security (Defense in Depth)
-- **Actionability**: Information without direction is useless. E-Mitra requests geolocation and **routes the worker to the exact physical address** of the nearest District Labour Commissioner in Delhi via Google Maps.
-- **Security & Guardrails**: 
-  - **AI Safety & Prompt Injection**: Inputs are sanitized (`safeQuery`) and strictly isolated from system prompts to block prompt-injection attacks.
-  - **API & Endpoint Security**: The `/api/route-office` endpoint enforces strict Zod schema validation (restricting lat/lon ranges). `helmet` middleware sets secure HTTP headers (XSS protection, etc.).
-  - **DDoS & Resource Protection**: Incoming requests are capped with `express.json({ limit: '10kb' })` to prevent massive payload attacks, and `express-rate-limit` throttles brute-force attempts.
-  - **Application Reliability**: All Gemini API calls use `AbortController` timeouts (15s/10s) to prevent indefinite hangs. Frontend race conditions are mitigated by aborting stale in-flight requests.
-  - **UX Safety (Global Kill Switch)**: Audio playback halts immediately on user interruption (new queries or language toggles) to prevent chaotic overlapping audio.
-### 3. Elastic Usage (Search & Audit)
-- **Hybrid Semantic Search**: Uses `dense_vector` (3072 dimensions) with Gemini embeddings for semantic matching (Cosine Similarity), falling back to `multi_match` BM25 keyword search across titles and descriptions.
-- **Geo-Routing**: Uses Elasticsearch `geo_point` mapping to calculate nearest locations based on user coordinates.
-- **HNSW Tuning**: Tuned index options (`m: 16`, `ef_construction: 100`) for maximum vector recall.
-- **Audit Logging**: Every query, latency metric, and detected language is fire-and-forget logged into an `emitra-audit-logs` Elastic index for real-time Kibana monitoring.
+    subgraph Backend ["⚙️ Express.js Security & Guardrails Middleware"]
+        Sanitizer["🛡️ Safe Query & Prompt Injection Guard"]
+        ZodVal["📐 Zod Schema & Geolocation Validator"]
+        RateLimiter["⏱️ Express Rate Limiter & Helmet Headers"]
+        AuditLogger["📊 Async Fire-and-Forget Elastic Audit Stream"]
+    end
 
-### 4. Data Effort
-A curated dataset of Delhi Minimum Wages, Labour Statutes (Maternity Benefit Act, Payment of Wages, Factories Act), and Welfare Schemes (e-Shram, BOCW) was structured into JSON fixtures and embedded using a high-performance Python ingestion script via the Elastic `helpers.bulk()` API (yielding 10x faster indexing).
+    subgraph AI_Engine ["🧠 Hybrid RAG & Vector Search Engine"]
+        GeminiEmbed["Gemini gemini-embedding-001 (3072-dims)"]
+        ElasticIndex["Elasticsearch Cloud (emitra-knowledge index)"]
+        HNSW["Cosine Similarity HNSW (m:16, ef:100)"]
+        BM25["BM25 Lexical Keyword Fallback Search"]
+        GeminiLLM["Gemini 2.5 Flash Bilingual Synthesizer"]
+    end
 
-### 5. Demo Quality and Storytelling
-E-Mitra is packaged as a **Progressive Web App (PWA)** experience with fixed headers/footers, inner scrolling, and dynamic bilingual panels. The UX is polished with loading skeletons, undo/edit buttons, and pulsating microphone animations.
+    subgraph Output ["📍 Bilingual Response & Routing Layer"]
+        HindiAns["🗣️ Conversational Hindi Response (Plain Text + TTS)"]
+        EngAns["📜 Official English Statute & Section Citations"]
+        GeoMaps["🗺️ District Labour Office Google Maps Routing"]
+    end
 
----
+    User --> VoiceInput & TextInput & QuickChips
+    VoiceInput & TextInput & QuickChips --> Sanitizer
+    Sanitizer --> ZodVal --> RateLimiter
+    RateLimiter --> GeminiEmbed
+    GeminiEmbed --> HNSW
+    RateLimiter --> BM25
+    HNSW & BM25 --> ElasticIndex
+    ElasticIndex --> GeminiLLM
+    GeminiLLM --> HindiAns & EngAns & GeoMaps
+    RateLimiter -.-> AuditLogger
+    StopBtn -.->|Abort Signal| RateLimiter
+```
 
-## 🚀 Use Cases & Examples
+### 2. High-Performance Bulk Data Ingestion Architecture
 
-1. **Minimum Wages Assessment**: 
-   - *Query*: "What is the minimum wage for a skilled worker in Delhi?"
-   - *Action*: Fetches the latest officially gazetted wage rates (monthly and daily).
-2. **Wage Theft & Rights Violations**:
-   - *Query*: "My contractor hasn't paid me for 3 weeks."
-   - *Action*: Explains rights under the Payment of Wages Act and tells them how to file a complaint.
-3. **Welfare Board Access (e-Shram)**:
-   - *Query*: "How do I register for the e-Shram portal?"
-   - *Action*: Simplifies the eligibility criteria and required documents into bullet points.
-4. **Physical Routing**:
-   - *Action*: Clicking "Find Nearest Labour Office" uses device GPS to plot a route to the closest Labour Commissioner.
+```mermaid
+flowchart LR
+    subgraph RawData ["📂 Structured Fixtures (data_fixtures.json)"]
+        Wages["💰 Wage Scales (Unskilled to Graduate)"]
+        Statutes["⚖️ 12+ Labour Acts & Penalties"]
+        Schemes["🛡️ Welfare Schemes (e-Shram, DBOCWWB, PMSYM)"]
+        Offices["📍 10 Delhi District Labour Offices"]
+    end
 
----
+    subgraph Pipeline ["⚡ Python Bulk Embedding Pipeline (ingest.py)"]
+        JsonParser["JSON Parser & Text Formatter"]
+        GeminiAPI["Google Gemini Embedding API"]
+        VectorGen["3072-dim Cosine Dense Vectors"]
+    end
 
-## ⚡ Technical Details & Optimizations
+    subgraph Elastic ["☁️ Elasticsearch Cloud Serverless Index"]
+        CreateIdx["indices.create(emitra-knowledge)"]
+        DenseVector["dense_vector HNSW Indexing"]
+        BulkIngest["helpers.bulk() High-Speed Ingestion"]
+    end
 
-**Tech Stack**: React + Vite (Frontend), Node.js + Express (Backend), Python (Ingestion), Elasticsearch (Vector DB), Google Gemini API (LLM/Embeddings).
-
-**Performance Optimizations**:
-- **Fire-and-Forget Auditing**: Audit logs are dispatched asynchronously without `await`, shaving 50-150ms off the user's response time.
-- **Payload Compression**: Enabled `compression` middleware, shrinking JSON payloads by ~60-70% over the wire.
-- **ES `_source` Filtering**: Excludes the massive 3072-dimensional `text_vector` from Elasticsearch search responses, saving ~72KB per request.
-- **Data Caching**: Fallback JSON fixtures are cached in memory at module load, eliminating disk I/O during fallback scenarios.
-- **React Memoization**: Reduced re-renders in the chat interface.
-
----
-
-## 🏗️ Project Structure
-```text
-Elastic-Buildathon/
-├── backend/                  # Node.js / Express security backend
-│   ├── db.js                 # Elasticsearch connectivity & audit logging
-│   ├── gemini.js             # Google Gemini API REST client & timeouts
-│   ├── server.js             # API endpoints, Zod validation, rate-limiting
-│   └── package.json
-├── data/
-│   └── data_fixtures.json    # Statutes, wages, welfare schemes & offices
-├── frontend/                 # Vite + React Web Application (PWA UI)
-│   ├── src/
-│   │   ├── App.jsx           # Main React code (Speech API, Geo-routing, Guardrails)
-│   │   └── index.css         # Worker Safety high-contrast theme styling
-│   └── package.json
-├── scripts/
-│   └── ingest.py             # Bulk vector embedding & Elastic ingestion
-├── requirements.txt          # Python dependencies
-└── .env                      # Credentials file
+    Wages & Statutes & Schemes & Offices --> JsonParser
+    JsonParser --> GeminiAPI --> VectorGen
+    VectorGen --> CreateIdx --> DenseVector --> BulkIngest
 ```
 
 ---
 
-## ⚡ Prerequisites
-- **Node.js** (v18 or higher)
-- **Python 3**
-- An **Elastic Cloud Account** (14-day free trial supports vectors)
-- A **Google Gemini API Key** (from [Google AI Studio](https://aistudio.google.com/))
+## 🎨 Design System & Aesthetic Engineering (`high-end-visual-design`)
+
+E-Mitra is designed according to principal UI/UX architecture directives, avoiding generic dark mesh slop or cheap templated defaults:
+
+- **Pure Light Mode Palette**:
+  - **Safety Saffron / Orange (`#f97316`)**: Symbolizing worker dignity and high visibility.
+  - **Construction Warm Amber (`#f59e0b`)**: Secondary accent for quick prompt chips and badges.
+  - **Warm Slate Surfaces (`#f8fafc`) & Pristine White Cards (`#ffffff`)**: Clean, high-contrast background hierarchy.
+  - **Deep Slate Ink Typography (`#0f172a` / `#334155`)**: Ensuring WCAG AA 4.5:1+ contrast compliance.
+- **GSAP Motion Choreography (`gsap-core` & `gsap-plugins`)**:
+  - `gsap.fromTo()` entrance transitions on chat bubbles with `clearProps: 'all'` hygiene.
+  - Micro-animations on active microphone recording (pulsing aura + timer counter).
+- **Audio & Processing UX Innovations**:
+  - **Instant TTS Interruption**: Tapping the mic button immediately silences active text-to-speech audio via `stopAllAudio()`.
+  - **Auto-Cleared Audio Previews**: Recorded voice preview blob URLs automatically revoke and clear upon sending.
+  - **Interactive Request Cancellation**: An `AbortController`-backed red Stop button (`⏹️`) allows users to cancel in-flight LLM generations instantly.
+
+---
+
+## 📊 Ingested Knowledge Base (Elasticsearch Index: `emitra-knowledge`)
+
+Verified via **Elastic-Search MCP Server**, E-Mitra contains **34 indexed documents** embedded using **3072-dimensional Gemini vectors**:
+
+| Document Type | Count | Key Topics Covered |
+| --- | :---: | --- |
+| **Minimum Wage Scales** | 6 Tiers | Unskilled (₹695/day), Semi-Skilled (₹765/day), Skilled (₹843/day), Clerical Non-Matriculate (₹765/day), Clerical Matriculate (₹843/day), Graduate (₹917/day). |
+| **Labour Statutes & Rights** | 12 Acts | Minimum Wages Act 1948 (Sec 12/20), Payment of Wages Act 1936 (Sec 5), Contract Labour Act 1970 (Sec 21(4) Principal Employer Liability), Maternity Benefit Act 1961 (26 weeks paid leave), Equal Remuneration Act 1976, Inter-State Migrant Workmen Act 1979 (Displacement & Passage Allowance), Factories Act 1948 (**2x Overtime Rate**), ESIC Act 1948 (Free hospital care), EPFO Act 1952 (12% PF & EPS Pension), Gratuity Act 1972 (15 days/yr after 5 yrs), Delhi Shops & Establishments Act 1954, Street Vendors Act 2014. |
+| **Welfare Schemes** | 6 Schemes | e-Shram Card, Delhi Construction Board (DBOCWWB ₹3,000/mo pension & ₹30,000 maternity grant), PM Shram Yogi Maandhan (PMSYM), Ayushman Bharat (PM-JAY ₹5 Lakhs cover), One Nation One Ration Card (ONORC), PM SVANidhi Street Vendor Micro-loans. |
+| **District Labour Offices** | 10 Offices | All active Delhi Joint Labour Commissioner offices (South, West, North-West, East/North-East, South-West, Central, North, South-East, New Delhi, Shahdara) mapped with `geo_point` coordinates and Google Maps queries. |
+
+---
+
+## ⚡ Technical Architecture & Security (Defense in Depth)
+
+1. **Hybrid Semantic Vector Search**:
+   - `dense_vector` mapping (3072 dimensions) with Gemini `gemini-embedding-001` embeddings.
+   - HNSW index configuration (`m: 16`, `ef_construction: 100`) for maximum vector recall.
+   - Fallback to BM25 `multi_match` lexical keyword search across Hindi and English fields.
+2. **Security & Guardrails**:
+   - **Sanitization**: `safeQuery` utility cleans inputs and strips prompt injection attempts.
+   - **Zod Validation**: `/api/route-office` strictly validates latitude/longitude boundaries.
+   - **Rate-Limiting & Helmet**: Protected against DDoS and malicious header manipulation.
+3. **Asynchronous Audit Streaming**:
+   - Fire-and-forget logging to `emitra-audit-logs` Elasticsearch index for real-time Kibana monitoring.
+
+---
+
+## 📁 Repository Structure
+
+```text
+E-Mitra-Buildathon/
+├── backend/                  # Node.js / Express backend with Zod & Elastic client
+│   ├── db.js                 # Elasticsearch Cloud connection & audit logging
+│   ├── gemini.js             # Google Gemini API REST client & timeouts
+│   ├── server.js             # Express REST endpoints, Zod schema, security
+│   └── package.json
+├── data/
+│   └── data_fixtures.json    # 34 structured knowledge base documents
+├── frontend/                 # Vite + React 19 Light Mode Web Application
+│   ├── src/
+│   │   ├── App.jsx           # React app, GSAP animations, Web Speech API
+│   │   └── index.css         # Saffron/Gold pure Light Mode design system
+│   └── package.json
+├── scripts/
+│   └── ingest.py             # Bulk vector embedding & Elasticsearch ingestion script
+├── requirements.txt          # Python requirements for Elastic & Gemini
+└── .env                      # API keys & credentials
+```
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### Step 1: Configure Environment Variables
-Copy `.env.example` to a new file named `.env` in the root folder, and fill in your keys:
+### Step 1: Environment Setup
+Create a `.env` file in the root folder with your credentials:
 ```env
 ELASTIC_CLOUD_ID=your_elastic_cloud_id
 ELASTIC_API_KEY=your_elastic_api_key
@@ -110,34 +190,30 @@ GEMINI_API_KEY=your_gemini_api_key
 JWT_SECRET=emitra-super-secret-key-2026
 ```
 
-### Step 2: Index Data into Elasticsearch
+### Step 2: Ingest Knowledge Base into Elasticsearch
 ```bash
 pip install -r requirements.txt
 python scripts/ingest.py
 ```
 
-### Step 3: Start the Backend Server
+### Step 3: Launch Backend Server
 ```bash
 cd backend
 npm install
 npm start
 ```
-*Server runs on `http://localhost:5000`.*
+*Backend runs on `http://localhost:5000`.*
 
-### Step 4: Start the Frontend Application
+### Step 4: Launch Frontend Web Application
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-*Open `http://localhost:5173` in Google Chrome (for optimal Web Speech API voice support).*
+*Frontend runs on `http://localhost:5173`.*
 
 ---
 
-## 🕵️ Demo & Storytelling Guide
-1. **Quick Login:** Open the web app and click **✨ Demo Quick Login** (Admin user).
-2. **Voice Query:** Tap the microphone 🎤 button and speak in Hindi (e.g., *"ठेकेदार ने 3 हफ्ते से पैसे नहीं दिए"*).
-3. **Bilingual RAG Answer:** Notice the response appears in Hindi (for the worker) and English (with exact legal citations).
-4. **Audio Synthesis:** Click the Speaker 🔊 icon to hear E-Mitra speak the rights out loud. Notice how clicking it again or sending a new message instantly kills the audio (Guardrails).
-5. **Location Routing:** Scroll down and view the routing card pointing to the closest Labour Commissioner Office, with a Google Maps button.
-6. **Kibana Audit:** Open Kibana and view the `emitra-audit-logs` to show judges the real-time stream of incoming queries and performance metrics.
+## 📜 License & Acknowledgments
+
+Built for the **Elastic Buildathon**. Empowering Delhi's workforce through accessible AI technology, transparent labour rights, and resilient search infrastructure.
