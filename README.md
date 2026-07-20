@@ -23,9 +23,13 @@ By bridging the severe legal information asymmetry between workers and contracto
 
 ## 📸 Interface & UI Highlights
 
-| Pristine Light Mode Dashboard | Interactive Routing Card |
+| Pristine Light Mode Dashboard | Interactive District Office Routing |
 | :---: | :---: |
-| ![Dashboard Light Mode](C:/Users/amarj/.gemini/antigravity-ide/brain/b62197b7-9141-4273-acc4-bcfadc9b6de4/dashboard_light_mode_1784550849890.png) | ![Nearest Office Card](C:/Users/amarj/.gemini/antigravity-ide/brain/b62197b7-9141-4273-acc4-bcfadc9b6de4/nearest_office_card_1784551234714.png) |
+| <img src="assets/dashboard_light_mode.png" width="400" alt="Dashboard Light Mode" /> | <img src="assets/office_card_hindi.png" width="400" alt="Hindi District Office Routing Card" /> |
+
+| Request Stop Button (⏹️) Active | Audio Preview & English Statute Answer |
+| :---: | :---: |
+| <img src="assets/generating_response_stop.png" width="400" alt="Request Stop Button Active" /> | <img src="assets/office_card_english.png" width="400" alt="English Answer with Voice Message Preview" /> |
 
 ---
 
