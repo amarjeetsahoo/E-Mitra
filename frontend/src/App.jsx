@@ -776,9 +776,6 @@ function App() {
                 </button>
               )}
             </form>
-            <footer className="text-center py-2 text-xs text-amber-900/60 font-medium">
-              Designed & Developed by <a href="https://amarjeetsahoo.qzz.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-amber-900 font-semibold transition-colors">Amarjeet Sahoo</a>
-            </footer>
           </div>
         </>
       )}
