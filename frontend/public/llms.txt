@@ -1,0 +1,15 @@
+# E-Mitra (ई-मित्र) — Delhi Labour Rights & Migrant Worker AI Agent
+
+> E-Mitra is an AI-driven civic accessibility portal built by **Amarjeet Sahoo** (https://amarjeetsahoo.qzz.io/) to bridge the knowledge gap for 2+ million migrant and informal workers in Delhi, NCR.
+
+## Project Details
+- **Developer / Creator**: Amarjeet Sahoo
+- **Developer Website**: https://amarjeetsahoo.qzz.io/
+- **Repository**: https://github.com/amarjeetsahoo/E-Mitra
+- **Core Technology**: React 19, Node.js Express, Elasticsearch Cloud (HNSW 3072-dim Cosine Vector Search), Google Gemini AI API, GSAP Motion.
+
+## Core Capabilities
+1. **Delhi Minimum Wage Audit (2026)**: Instant checks across Unskilled (₹18,066/mo), Semi-Skilled (₹19,901/mo), Skilled (₹21,917/mo), and Graduate/Clerical tiers under the Minimum Wages Act 1948.
+2. **Welfare Scheme Guidance**: Simplified registration guidance for e-Shram Card, DBOCWWB Delhi Construction Board (₹1 Lakh maternity, ₹2 Lakh accidental), PMSYM Pension, PM-JAY Ayushman Bharat, ONORC Ration Card, and PM SVANidhi Street Vendor loans.
+3. **Labour Office Geolocation Routing**: Automatic and query-based routing to all 10 Delhi District Labour Commissioner offices (Pusa Road, DTC Depot Hari Nagar, Nimri Colony Ashok Vihar, Vishwakarma Nagar Jhabar, Kalkaji, Karampura, etc.) with geo-coordinates, helpline numbers, and direct Google Maps links.
+4. **Bilingual Accessibility**: Full voice and text support in Hindi and English.

@@ -7,7 +7,9 @@
 ![GSAP Core & Motion](https://img.shields.io/badge/GSAP-Core%20%26%20Plugins-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
 ![React 19 + Vite](https://img.shields.io/badge/React%2019-Vite%208.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Light Theme Only](https://img.shields.io/badge/UI%20Theme-Pure%20Light%20Mode-f97316?style=for-the-badge)
-![WCAG AA](https://img.shields.io/badge/Accessibility-WCAG%20AA%20Compliant-10b981?style=for-the-badge)
+[![Created by Amarjeet Sahoo](https://img.shields.io/badge/Author-Amarjeet%20Sahoo-ff69b4?style=for-the-badge&logo=github)](https://amarjeetsahoo.qzz.io/)
+
+> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/)
 
 </div>
 

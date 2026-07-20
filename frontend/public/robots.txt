@@ -1,0 +1,27 @@
+# User-agent directives for E-Mitra by Amarjeet Sahoo
+User-agent: *
+Allow: /
+
+# Directives for AI Crawlers (Search & LLM Citations)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+Sitemap: https://amarjeetsahoo.qzz.io/sitemap.xml
