@@ -10,7 +10,7 @@
 [![Created by Amarjeet Sahoo](https://img.shields.io/badge/Author-Amarjeet%20Sahoo-ff69b4?style=for-the-badge&logo=github)](https://amarjeetsahoo.qzz.io/)
 [![Medium Blog](https://img.shields.io/badge/Medium-Read%20Blog%20Post-black?style=for-the-badge&logo=medium)](https://amarjeetsahoo2000.medium.com/how-we-built-e-mitra-empowering-2m-delhi-migrant-workers-with-google-gemini-3-5-441e8d6823a8)
 
-> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/) | [Medium Story](https://amarjeetsahoo2000.medium.com/how-we-built-e-mitra-empowering-2m-delhi-migrant-workers-with-google-gemini-3-5-441e8d6823a8)
+> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/) | [Medium Profile](https://amarjeetsahoo2000.medium.com/) | [Medium Story](https://amarjeetsahoo2000.medium.com/how-we-built-e-mitra-empowering-2m-delhi-migrant-workers-with-google-gemini-3-5-441e8d6823a8)
 
 </div>
 
