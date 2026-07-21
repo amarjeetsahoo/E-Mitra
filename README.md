@@ -8,8 +8,9 @@
 ![React 19 + Vite](https://img.shields.io/badge/React%2019-Vite%208.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Light Theme Only](https://img.shields.io/badge/UI%20Theme-Pure%20Light%20Mode-f97316?style=for-the-badge)
 [![Created by Amarjeet Sahoo](https://img.shields.io/badge/Author-Amarjeet%20Sahoo-ff69b4?style=for-the-badge&logo=github)](https://amarjeetsahoo.qzz.io/)
+[![Medium Blog](https://img.shields.io/badge/Medium-Read%20Blog%20Post-black?style=for-the-badge&logo=medium)](https://medium.com/@amarjeetsahoo)
 
-> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/)
+> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/) | [Medium Profile](https://medium.com/@amarjeetsahoo)
 
 </div>
 
@@ -220,6 +221,14 @@ npm run dev
 
 ---
 
+## 📝 Medium Publication & Technical Writeup
+
+Read the detailed technical deep dive on Medium explaining how **E-Mitra** combines Google Gemini 2.5 Flash with Elasticsearch Cloud 3072-dimensional HNSW Vector Search:
+
+👉 **[How We Built E-Mitra: Empowering 2M+ Delhi Migrant Workers with Google Gemini 2.5 & Elasticsearch Cloud Hybrid RAG](https://medium.com/@amarjeetsahoo)**
+
+---
+
 ## 📜 License & Acknowledgments
 
-Built for the **Elastic Buildathon**. Empowering Delhi's workforce through accessible AI technology, transparent labour rights, and resilient search infrastructure.
+Built for the **Build with AI - Buildathon**. Empowering Delhi's workforce through accessible AI technology, transparent labour rights, and resilient search infrastructure.
