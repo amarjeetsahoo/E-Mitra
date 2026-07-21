@@ -8,9 +8,9 @@
 ![React 19 + Vite](https://img.shields.io/badge/React%2019-Vite%208.1-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Light Theme Only](https://img.shields.io/badge/UI%20Theme-Pure%20Light%20Mode-f97316?style=for-the-badge)
 [![Created by Amarjeet Sahoo](https://img.shields.io/badge/Author-Amarjeet%20Sahoo-ff69b4?style=for-the-badge&logo=github)](https://amarjeetsahoo.qzz.io/)
-[![Medium Blog](https://img.shields.io/badge/Medium-Read%20Blog%20Post-black?style=for-the-badge&logo=medium)](https://medium.com/@amarjeetsahoo)
+[![Medium Blog](https://img.shields.io/badge/Medium-Read%20Blog%20Post-black?style=for-the-badge&logo=medium)](https://amarjeetsahoo2000.medium.com/how-we-built-e-mitra-empowering-2m-delhi-migrant-workers-with-google-gemini-3-5-441e8d6823a8)
 
-> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/) | [Medium Profile](https://medium.com/@amarjeetsahoo)
+> **Developer & Creator**: [Amarjeet Sahoo](https://amarjeetsahoo.qzz.io/) — [Portfolio](https://amarjeetsahoo.qzz.io/) | [Medium Story](https://amarjeetsahoo2000.medium.com/how-we-built-e-mitra-empowering-2m-delhi-migrant-workers-with-google-gemini-3-5-441e8d6823a8)
 
 </div>
 
@@ -225,7 +225,7 @@ npm run dev
 
 Read the detailed technical deep dive on Medium explaining how **E-Mitra** combines Google Gemini 2.5 Flash with Elasticsearch Cloud 3072-dimensional HNSW Vector Search:
 
-👉 **[How We Built E-Mitra: Empowering 2M+ Delhi Migrant Workers with Google Gemini 2.5 & Elasticsearch Cloud Hybrid RAG](https://medium.com/@amarjeetsahoo)**
+👉 **[How We Built E-Mitra: Empowering 2M+ Delhi Migrant Workers with Google Gemini 2.5 & Elasticsearch Cloud Hybrid RAG](https://amarjeetsahoo2000.medium.com/how-we-built-e-mitra-empowering-2m-delhi-migrant-workers-with-google-gemini-3-5-441e8d6823a8)**
 
 ---
 
